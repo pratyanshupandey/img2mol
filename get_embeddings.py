@@ -19,8 +19,7 @@ CONFIG = None
 
 def parse_smiles():
     file = open(CONFIG.input_file, "r")
-    data = np.array([line.strip().split(',') for line in file.readlines()])
-    smiles_list = data[:,0]
+    smiles_list = np.array([line.strip() for line in file.readlines()])
     file.close()
     return smiles_list
 
@@ -37,5 +36,6 @@ def save_embeddings(embeddings):
 
 if __name__ == '__main__':
     CONFIG = parser.parse_args()
+    print(f"GPU: {CONFIG.gpu}")
     save_embeddings(create_embeddings(parse_smiles()))
-    # python get_embeddings.py --use_gpu --cpu_threads=20 --input_file="data/data/train/metadata.txt" --output_file="data/data/train/embeddings"
+    # python get_embeddings.py --use_gpu --cpu_threads=20 --input_file="data/train/smiles.txt" --output_file="data/train/embeddings"
