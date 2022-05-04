@@ -4,8 +4,8 @@
 Since we are using the CDDD network, to run the code successfully the cddd environment needs to be setup
 from https://github.com/jrwnter/cddd.
 
-Place the data that you want  to train on in the data folder. The formatting for that is given in dataset.py.
 
+Place the data that you want  to train on in the data folder. The formatting for that is given in dataset.py. To get the embeddings run get_embeddings.py with appropriate arguments.
 
 
 To  run inference:
